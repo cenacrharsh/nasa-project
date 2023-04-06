@@ -15,3 +15,5 @@ server.listen(PORT, () => {
 /* any middleware or route handlers attached to app object will respond to requests coming in to our server */
 
 /* using built in http server allows us to not only respond to http requests but also to other types of connections for eg. web sockets for real time communication  */
+
+/* ORIGIN for our API & Frontend is different as origin includes Protocol, URL Hostname and PORT number & our server & client are running on different ports */
