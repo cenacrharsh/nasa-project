@@ -1,0 +1,30 @@
+{
+  "name": "nasa-project-root",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "server": "npm run watch --prefix server",
+    "client": "npm start --prefix client",
+    "watch": "npm run client & npm run server",
+    "test": "npm run test --prefix server && npm run test --prefix client",
+    "start:dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cenacrharsh/nasa-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cenacrharsh/nasa-project/issues"
+  },
+  "homepage": "https://github.com/cenacrharsh/nasa-project#readme",
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
