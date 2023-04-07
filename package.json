@@ -11,8 +11,7 @@
     "client": "npm start --prefix client",
     "watch": "npm run client & npm run server",
     "deploy": "npm run build --prefix client && npm start --prefix server",
-    "test": "npm run test --prefix server && npm run test --prefix client",
-    "start:dev": "concurrently \"npm run server\" \"npm run client\""
+    "test": "npm run test --prefix server && npm run test --prefix client"
   },
   "repository": {
     "type": "git",
