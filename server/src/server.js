@@ -2,13 +2,22 @@ const http = require("http");
 
 const app = require("./app");
 
+const { loadPlanetsData } = require("./models/planets.model");
+
 const PORT = process.env.PORT || 8000;
 
 const server = http.createServer(app);
 
-server.listen(PORT, () => {
-  console.log(`Server Listening on PORT::${PORT}...`);
-});
+async function startServer() {
+  //> makes sure our planet data is avalable before any req comes in to our server
+  await loadPlanetsData();
+
+  server.listen(PORT, () => {
+    console.log(`Server Listening on PORT::${PORT}...`);
+  });
+}
+
+startServer();
 
 /* express is basically just a fancy listener function/middleware that we add on top our built in node http server */
 

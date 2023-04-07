@@ -1,4 +1,4 @@
-const planets = require("../../models/planets.model");
+const { planets } = require("../../models/planets.model");
 
 function getAllPlanets(req, res) {
   //* it's better to use return whenever we set a response, so that our controller functions only ever the set the response only once, return value isn't used by express, it's just to make sure our function stops executing when response is set
