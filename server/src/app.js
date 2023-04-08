@@ -15,7 +15,7 @@ app.use(
   })
 );
 //> we want this middleware to be as high as possible to log everything, but not above any security related middlewares which controls what comes in and out of our server
-app.use(morgan("combined"));
+app.use(morgan("dev"));
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "..", "public")));
