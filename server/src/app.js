@@ -24,7 +24,8 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 app.use(planetsRouter);
 app.use(launchesRouter);
 
-app.get("/", (req, res) => {
+//> * mathches everything that follows the /, i.e. match any endpoints that don't match above, express then passes it to our frontend application at index.html so that frontend can handle the routing
+app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
