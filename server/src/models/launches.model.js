@@ -14,6 +14,11 @@ const launch = {
 //* map launchDate to launch object
 launches.set(launch.flightNumber, launch);
 
+//> Functions to Access the Data, Controller doesn't needs to know the implementation details, only to use the data access functions
+function getAllLaunches() {
+  return Array.from(launches.values());
+}
+
 module.exports = {
-  launches,
+  getAllLaunches,
 };

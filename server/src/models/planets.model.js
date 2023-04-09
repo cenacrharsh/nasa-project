@@ -52,9 +52,14 @@ function loadPlanetsData() {
   });
 }
 
+//> Data Access Function
+function getAllPlanets() {
+  return habitablePlanets;
+}
+
 module.exports = {
   loadPlanetsData,
-  planets: habitablePlanets,
+  getAllPlanets,
 };
 
 /* we are using streams, and node won't wait for any of our stream code to complete before it returns our module exports => we'll use promises and we will wait for promise to resolve before accepting any incoming req in controller */
