@@ -11,9 +11,9 @@ const app = express();
 
 //! Middlewares
 app.use(
-  cors({
-    origin: "http://localhost:3000",
-  })
+    cors({
+        origin: "http://localhost:3000",
+    })
 );
 //> we want this middleware to be as high as possible to log everything, but not above any security related middlewares which controls what comes in and out of our server
 app.use(morgan("dev"));
@@ -21,12 +21,12 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "..", "public")));
 
-app.use(planetsRouter);
-app.use(launchesRouter);
+app.use("/planets", planetsRouter);
+app.use("/launches", launchesRouter);
 
 //> * mathches everything that follows the /, i.e. match any endpoints that don't match above, express then passes it to our frontend application at index.html so that frontend can handle the routing
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
+    res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
 module.exports = app;
